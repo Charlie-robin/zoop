@@ -54,8 +54,10 @@ public class Animal {
             this.happiness = happiness;
         }
 
-        if(this.happiness > 50){
+        if(this.happiness > 50 && !isTame){
             isTame = true;
         }
     }
+
+
 }
