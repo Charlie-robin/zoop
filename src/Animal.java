@@ -59,5 +59,32 @@ public class Animal {
         }
     }
 
+    // METHODS
+    // ACCESS-MODIFIER RETURN-TYPE METHOD-NAME ( TYPE PARAMETER ) { // DO SOMETHING & RETURN SOMETHING }
+
+    public void pet(){
+        // IF IT GOES OVER 100 WE SET IT TO 100
+//        if(this.happiness + 10 > 100){
+//            setHappiness(100);
+//        } else {
+//            // OTHERWISE SET IT TO THE RESULT + 10
+//            setHappiness(this.happiness + 10);
+//        }
+                 setHappiness(Math.min(this.happiness + 10, 100));
+    }
+
+    public void receiveTreat(){
+        setHappiness(Math.min(this.happiness + 30, 100));
+    }
+
+
+    public String getInfo(){
+        // Sting concatenation
+        // "\nName : " + name + "\nType : " + type + "\nHappiness : " + happiness + "\nisTame : " + isTame;
+        // String.format()
+        // %s - string , %d - digit etc
+        return String.format("\nName :  %s\nType :  %s\nHappiness :  %d\nisTame :  %s",name, type, happiness, isTame );
+    }
+
 
 }
