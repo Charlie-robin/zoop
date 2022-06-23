@@ -8,12 +8,13 @@
 
 public class Main {
     public static void main(String[] args) {
-
-        // INITIALISE THE CLASS
-        // - GIVE IT THE DATA IT NEEDS
         Animal charlie = new Animal("Charlie", "Magpie", "animal-1");
+        Commands home = new Commands("Home",  new String[]{"Create user", "Create Animal", "Quit"});
 
-        Animal rob = new Animal("Rob", "Orca", "animal-2");
+        home.printMessage("Hello");
+        home.printGreeting();
+        home.printCommands();
+        home.getIntegerInput();
 
     }
 }

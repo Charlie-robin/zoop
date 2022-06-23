@@ -59,5 +59,16 @@ public class Animal {
         }
     }
 
+    public void pet(){setHappiness(Math.min(this.happiness + 10, 100));}
+
+    public void receiveTreat(){
+        setHappiness(Math.min(this.happiness + 30, 100));
+    }
+
+
+    public String getInfo(){
+        return String.format("\nName :  %s\nType :  %s\nHappiness :  %d\nisTame :  %s",name, type, happiness, isTame );
+    }
+
 
 }
