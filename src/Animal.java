@@ -15,6 +15,7 @@
  */
 
 public class Animal {
+    private final String sound;
     private String name;
     private String type;
 
@@ -25,12 +26,17 @@ public class Animal {
     private int happiness;
 
 
-    public Animal(String name, String type, String id){
+    public Animal(String name, String type, String id, String sound){
         this.name = name;
         this.type = type;
         this.id = id;
         this.happiness = (int) (Math.random() * 100 + 1);
         this.isTame = this.happiness > 50;
+        this.sound = sound;
+    }
+
+    public String getSound() {
+        return sound;
     }
 
     public String getId() {
@@ -65,8 +71,10 @@ public class Animal {
         setHappiness(Math.min(this.happiness + 30, 100));
     }
 
-
-    public String getInfo(){
+    // toString() -> OBJECT THAT WE INHERIT -> WE WANT OUR OWN IMPLEMENTATION
+    // ANNOTATION EXPLICITLY SATING WE WANT TO OVERRIDE THIS METHOD
+    @Override
+    public String toString(){
         return String.format("\nName :  %s\nType :  %s\nHappiness :  %d\nisTame :  %s",name, type, happiness, isTame );
     }
 

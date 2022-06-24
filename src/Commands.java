@@ -79,7 +79,7 @@ public class Commands {
         String input = "";
 
         while (isActive) {
-            printMessage("Enter text:");
+            printMessage("Enter text below:");
             String userInput = scanner.nextLine();
 
             if (!userInput.equals("")) {
