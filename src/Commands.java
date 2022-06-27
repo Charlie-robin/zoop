@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -33,10 +34,29 @@ public class Commands {
         printMessage("Welcome to the " + name + " commands.");
     }
 
-    public void printCommands(){
+    public void printCommands(String[] commands){
         for (int i = 0; i < commands.length; i++) {
             printMessage((i + 1) + " : " + commands[i]);
         }
+    }
+
+    // OVERLOAD printCommands
+    // ONE METHOD SHOULD TAKE AN STRING[] AS A PARAMETER
+    // - IT SHOULD LOOP THROUGH & KEEP THE ORIGINAL PRINT FUNCTIONALITY
+    // ONE METHOD SHOULD HAVE NO PARAMETERS
+    // - IT SHOULD PASS IN THE commands FIELD
+
+// EXTENSION
+// ADD ANOTHER printCommands THAT TAKES ArrayList<String>
+// - IT SHOULD LOOP THROUGH & KEEP THE ORIGINAL PRINT FUNCTIONALITY
+
+    public void printCommands(){
+        printCommands(commands);
+    }
+
+    public void printCommands(ArrayList<String> commandsList){
+        String[] commands = commandsList.toArray(new String[0]);
+        printCommands( commands );
     }
 
     // OVERLOADED METHOD
