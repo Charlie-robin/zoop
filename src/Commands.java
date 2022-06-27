@@ -16,7 +16,6 @@ import java.util.Scanner;
 
 public class Commands {
     private final Scanner scanner = new Scanner(System.in);
-    // final -> will never change
     private final String name;
     private final String[] commands;
 
@@ -39,8 +38,6 @@ public class Commands {
         }
     }
 
-    // OVERLOADED METHOD
-    // TAKES A LIMIT AND WILL GET YOU A NUMBER BETWEEN 0 - LIMIT
     public int getIntegerInput(int rangeLimit){
 
         int input = 0;
@@ -64,9 +61,6 @@ public class Commands {
         return input;
     }
 
-
-    // OVERLOADED METHOD
-    // CALLS THE METHOD ABOVE GIVE IT THE COMMANDS LENGTH -> WILL GET NUMBER 0 - COMMANDS LENGTH
     public int getIntegerInput(){
         return getIntegerInput(commands.length);
     }

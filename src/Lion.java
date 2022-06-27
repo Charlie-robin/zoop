@@ -1,5 +1,4 @@
 public class Lion extends Animal{
-
     private boolean isSleeping;
 
     public Lion(String name, String id) {

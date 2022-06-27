@@ -12,26 +12,8 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         List<Animal> zoo = new ArrayList<>();
-
-        // OVERLOADED METHOD -> ArrayList.add()
-        //  zoo.add(new Magpie("Maggy")); -> ADDED TO END
-        //  zoo.add(new Magpie("Index zero", "magpie-1")); -> ADDED AT GIVEN INDEX
-
-        // STATIC METHOD -> GET ANIMAL COUNT
-        System.out.println(Animal.getAnimalCount()); // 0 -> BY DEFAULT 0
-
-        // OVERLOADED CONSTRUCTORS
-        zoo.add(new Magpie("Maggy")); // GIVE IT NAME ONLY IT HANDLES ID ETC..
-        zoo.add(new Magpie("Rod", "r-1")); // GIVE IT NAME AND ID
-
-        zoo.add(new Lion("Leroy","l-1"));
-
-        // STATIC METHOD -> GET ANIMAL COUNT
-        System.out.println(Animal.getAnimalCount()); // 3 -> INCREMENTS EACH TIME A ANIMAL IS CREATED
-
-
-        System.out.println(zoo);
-
+        zoo.add(new Magpie("Maggy"));
+        
         // GETTING INFORMATION TO CREATE A USER
        Commands currentCommands = new Commands("Create user", new String[]{});
        currentCommands.printGreeting();

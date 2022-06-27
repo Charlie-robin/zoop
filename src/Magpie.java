@@ -10,13 +10,11 @@ public class Magpie extends Animal {
     private boolean isFlying;
 
     public Magpie(String name) {
-        // CALLING OUR OVERLOADED CONSTRUCTOR
         super(name, "magpie","Caaaarrrrrwwwww");
         this.isFlying = false;
     }
 
     public Magpie(String name, String id) {
-        // CALLING OUR OVERLOADED CONSTRUCTOR
         super(name, "magpie",id,"Caaaarrrrrwwwww");
         this.isFlying = false;
     }
