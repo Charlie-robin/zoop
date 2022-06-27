@@ -21,7 +21,7 @@ public class User {
     public User(String name) {
         this.name = name;
         this.score = 0;
-        this.treatCount = 5;
+        this.treatCount = 2;
     }
 
     public String getName() {

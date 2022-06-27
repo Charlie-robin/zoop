@@ -15,16 +15,28 @@
  */
 
 public class Animal {
-    private final String sound;
+    // PUBLIC - ACCESSIBLE ANYWHERE
+    // PROTECTED - ACCESSIBLE FROM EXTENDED CLASSES
+    // PRIVATE - ONLY ACCESSIBLE FROM THE CURRENT CLASS
+    private String sound;
     private String name;
     private String type;
-
     private String id;
 
     private boolean isTame;
 
     private int happiness;
 
+    // STATIC FIELD & METHODS -> ACCESSIBLE WITHOUT INITIALIZING A CLASS
+    private static int animalCount = 0;
+
+    public static int getAnimalCount() {
+        return animalCount;
+    }
+
+    public static void setAnimalCount(int animalCount) {
+        Animal.animalCount = animalCount;
+    }
 
     public Animal(String name, String type, String id, String sound){
         this.name = name;
@@ -33,6 +45,15 @@ public class Animal {
         this.happiness = (int) (Math.random() * 100 + 1);
         this.isTame = this.happiness > 50;
         this.sound = sound;
+        // INCREASING STATIC FIELD -> WHEN A NEW ANIMAL IS CREATED
+        setAnimalCount(animalCount + 1);
+    }
+
+    // OVERLOADING CONSTRUCTOR
+    public Animal(String name, String type, String sound){
+        // CALLING CONSTRUCTOR METHOD ^^
+        // id -> type + "-" + animalCount -> magpie-0
+        this(name, type, type + "-" + animalCount, sound );
     }
 
     public String getSound() {
@@ -71,11 +92,9 @@ public class Animal {
         setHappiness(Math.min(this.happiness + 30, 100));
     }
 
-    // toString() -> OBJECT THAT WE INHERIT -> WE WANT OUR OWN IMPLEMENTATION
-    // ANNOTATION EXPLICITLY SATING WE WANT TO OVERRIDE THIS METHOD
     @Override
     public String toString(){
-        return String.format("\nName :  %s\nType :  %s\nHappiness :  %d\nisTame :  %s",name, type, happiness, isTame );
+        return String.format("\nName :  %s\nType :  %s\nID :  %s\nHappiness :  %d\nisTame :  %s",name, type, id, happiness, isTame );
     }
 
 

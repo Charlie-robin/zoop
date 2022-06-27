@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * CONNECTING OUR CLASSES TOGETHER
  * - CREATE A USER FROM USER INPUT
@@ -8,17 +11,26 @@
 
 public class Main {
     public static void main(String[] args) {
+        List<Animal> zoo = new ArrayList<>();
 
-        // INHERITANCE
-        Magpie magpie = new Magpie("Maggy", "m-1");
+        // OVERLOADED METHOD -> ArrayList.add()
+        //  zoo.add(new Magpie("Maggy")); -> ADDED TO END
+        //  zoo.add(new Magpie("Index zero", "magpie-1")); -> ADDED AT GIVEN INDEX
 
-        // POLYMORPHISM
-        System.out.println(magpie.toString());
-        magpie.receiveTreat(); // isFlying false
-        System.out.println(magpie.toString());
-        magpie.receiveTreat(); // isFlying true
-        System.out.println(magpie.toString());
+        // STATIC METHOD -> GET ANIMAL COUNT
+        System.out.println(Animal.getAnimalCount()); // 0 -> BY DEFAULT 0
 
+        // OVERLOADED CONSTRUCTORS
+        zoo.add(new Magpie("Maggy")); // GIVE IT NAME ONLY IT HANDLES ID ETC..
+        zoo.add(new Magpie("Rod", "r-1")); // GIVE IT NAME AND ID
+
+        zoo.add(new Lion("Leroy","l-1"));
+
+        // STATIC METHOD -> GET ANIMAL COUNT
+        System.out.println(Animal.getAnimalCount()); // 3 -> INCREMENTS EACH TIME A ANIMAL IS CREATED
+
+
+        System.out.println(zoo);
 
         // GETTING INFORMATION TO CREATE A USER
        Commands currentCommands = new Commands("Create user", new String[]{});
@@ -29,17 +41,25 @@ public class Main {
        User user = new User(name);
        currentCommands.printMessage(user.toString());
 
+
        // SETTING UP FIRST COMMANDS TO SHOW
        String nextCommands = "home";
        boolean isActive = true;
-    // RUNNING THE APP
+       // RUNNING THE APP
        while(isActive){
            switch(nextCommands){
                case "home" :
                    currentCommands = new Commands("Home", new String[]{"Visit Animal", "Manage Animals", "Quit" });
                    currentCommands.printGreeting();
                    currentCommands.printCommands();
+
+                   // OVERLOADED METHOD
+                   // A NUMBER BETWEEN 0 - 3 -> 3 IS THE LENGTH OF THE COMMANDS ARRAY
                    int userInput = currentCommands.getIntegerInput();
+
+                   // OVERLOADED METHOD
+                   // PASS IN THE RANGE LIMIT -> EG A NUMBER BETWEEN 0 - 45
+                   userInput = currentCommands.getIntegerInput(45);
 
                    // FIGURING OUT WHICH SET OF COMMANDS TO RUN NEXT
                    if (userInput == 1) {
@@ -53,8 +73,24 @@ public class Main {
                    break;
 
                case "visit" :
-                   currentCommands.printMessage("VISIT");
-                   nextCommands = "home";
+                   currentCommands = new Commands("Visit", new String[]{"Pet Animal", "Give treat", "Go Back"});
+                   Animal currentAnimal = zoo.get(0);
+
+                   currentCommands.printGreeting();
+                   // GET ANIMAL INFORMATION AND PRINT IT
+                   currentCommands.printMessage(currentAnimal.toString());
+                   currentCommands.printCommands();
+
+                   userInput = currentCommands.getIntegerInput();
+
+                   if (userInput == 1){
+                       currentAnimal.pet();
+                       user.incrementScore();
+                   } else {
+                       nextCommands = "home";
+                   }
+
+
                    break;
 
                case "manage" :

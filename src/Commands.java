@@ -38,16 +38,19 @@ public class Commands {
             printMessage((i + 1) + " : " + commands[i]);
         }
     }
-    public int getIntegerInput(){
+
+    // OVERLOADED METHOD
+    // TAKES A LIMIT AND WILL GET YOU A NUMBER BETWEEN 0 - LIMIT
+    public int getIntegerInput(int rangeLimit){
 
         int input = 0;
         boolean isActive = true;
 
         while(isActive){
-        printMessage("Enter a number between 1 - " + commands.length);
+        printMessage("Enter a number between 1 - " + rangeLimit);
         int userInput = scanner.nextInt();
 
-        if(userInput > 0 && userInput <= commands.length){
+        if(userInput > 0 && userInput <= rangeLimit){
             isActive = false;
             input = userInput;
         } else {
@@ -61,16 +64,12 @@ public class Commands {
         return input;
     }
 
-    /*
-     * WRITE A METHOD CALLED getStringInput
-     * - IT SHOULD RETURN A STRING
-     * - DISPLAY THIS MESSAGE "Enter text"
-     * - USE THE SCANNER TO CAPTURE THE USERS INPUT
-     * - IF THE USER HAS ENTERED A VALUE RETURN IT
-     * - IF THE USER HASN'T ENTERED ANYTHING
-     *   - DISPLAY THIS MESSAGE "Unable to understand input, try again"
-     *   - TRY TO GET THE INPUT AGAIN.
-     */
+
+    // OVERLOADED METHOD
+    // CALLS THE METHOD ABOVE GIVE IT THE COMMANDS LENGTH -> WILL GET NUMBER 0 - COMMANDS LENGTH
+    public int getIntegerInput(){
+        return getIntegerInput(commands.length);
+    }
 
     public String getStringInput() {
 
