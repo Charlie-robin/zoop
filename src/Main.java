@@ -37,8 +37,8 @@ public class Main {
                    break;
 
                case "manage" :
-                   currentCommands.printMessage("MANAGE");
-                   currentCommands.setNextCommands("home");
+                   currentCommands = new ManageCommands();
+                   currentCommands.run();
                    break;
 
                default:

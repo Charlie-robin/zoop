@@ -14,7 +14,8 @@
  * - GETTING THE ANIMALS INFORMATION
  */
 
-public class Animal {
+// IMPLEMENTS -> INTERFACE -> Comparable PART OF THE JDK MAKES IT EASIER TO SORT CLASSES
+public class Animal implements Comparable<Animal> {
     // PUBLIC - ACCESSIBLE ANYWHERE
     // PROTECTED - ACCESSIBLE FROM EXTENDED CLASSES
     // PRIVATE - ONLY ACCESSIBLE FROM THE CURRENT CLASS
@@ -98,4 +99,15 @@ public class Animal {
     }
 
 
+    // INTERFACE NEEDS THIS METHOD -> WE ARE IMPLEMENTING IT
+    @Override
+    public int compareTo(Animal animal) {
+        // SORTING ANIMALS BY HAPPINESS
+        // BIGGEST TO SMALLEST ->
+        // SMALLEST TO BIGGEST -> happiness - animal.getHappiness();
+        // > 0 -> PUT THE ANIMAL AHEAD
+        // 0 -> KEEP ITS PLACE
+        // < 0 -> PUT THE ANIMAL BEHIND
+        return  animal.getHappiness() - happiness;
+    }
 }

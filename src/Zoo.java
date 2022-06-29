@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -23,7 +25,7 @@ public class Zoo{
     static {
         // INSIDE HERE WILL RUN ONCE
         // LOOP
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 1; i++) {
             // ADD A Magpie, Lion TO OUR ZOO
             // PASSING IN A RANDOM NAME TO EACH Animal
             String magpieName = getRandomName();
@@ -57,6 +59,12 @@ public class Zoo{
 
     public static Animal getAnimalByIndex(int index) {
         return zoo.get(index);
+    }
+
+    public static void sortAnimals(){
+        // SORT OUR ANIMALS
+        //  Collections.sort() -> ARRAYLIST -> IMPLEMENTS COMPARABLE INTERFACE
+        Collections.sort(zoo);
     }
 
 }

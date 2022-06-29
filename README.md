@@ -15,7 +15,7 @@ Each lesson with its notes are on their own individual branch.
 - `02-method-syntax-encapsulation-abstraction`
 - `03-inheritance-polymorphism`
 - `04-protected-static-polymorphism`
-
+- `05-abstract-classes-interfaces`
 
 
 ---
