@@ -14,11 +14,9 @@
  * - GETTING THE ANIMALS INFORMATION
  */
 
-// IMPLEMENTS -> INTERFACE -> Comparable PART OF THE JDK MAKES IT EASIER TO SORT CLASSES
+
 public class Animal implements Comparable<Animal> {
-    // PUBLIC - ACCESSIBLE ANYWHERE
-    // PROTECTED - ACCESSIBLE FROM EXTENDED CLASSES
-    // PRIVATE - ONLY ACCESSIBLE FROM THE CURRENT CLASS
+
     private String sound;
     private String name;
     private String type;
@@ -28,7 +26,6 @@ public class Animal implements Comparable<Animal> {
 
     private int happiness;
 
-    // STATIC FIELD & METHODS -> ACCESSIBLE WITHOUT INITIALIZING A CLASS
     private static int animalCount = 0;
 
     public static int getAnimalCount() {
@@ -46,14 +43,11 @@ public class Animal implements Comparable<Animal> {
         this.happiness = (int) (Math.random() * 100 + 1);
         this.isTame = this.happiness > 50;
         this.sound = sound;
-        // INCREASING STATIC FIELD -> WHEN A NEW ANIMAL IS CREATED
         setAnimalCount(animalCount + 1);
     }
 
-    // OVERLOADING CONSTRUCTOR
+
     public Animal(String name, String type, String sound){
-        // CALLING CONSTRUCTOR METHOD ^^
-        // id -> type + "-" + animalCount -> magpie-0
         this(name, type, type + "-" + animalCount, sound );
     }
 
@@ -99,15 +93,9 @@ public class Animal implements Comparable<Animal> {
     }
 
 
-    // INTERFACE NEEDS THIS METHOD -> WE ARE IMPLEMENTING IT
+
     @Override
     public int compareTo(Animal animal) {
-        // SORTING ANIMALS BY HAPPINESS
-        // BIGGEST TO SMALLEST ->
-        // SMALLEST TO BIGGEST -> happiness - animal.getHappiness();
-        // > 0 -> PUT THE ANIMAL AHEAD
-        // 0 -> KEEP ITS PLACE
-        // < 0 -> PUT THE ANIMAL BEHIND
         return  animal.getHappiness() - happiness;
     }
 }

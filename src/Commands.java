@@ -14,8 +14,6 @@ import java.util.Scanner;
  * - GET STRING INPUT ENTERED BY USER
  */
 
-    // ABSTRACT CLASS -> CAN'T BE INITIALIZED -> HAS TO BE INHERITED FROM -> EXTENDED
-    // WHAT A CLASS SHOULD DO
 public abstract class Commands {
     private final Scanner scanner = new Scanner(System.in);
     private final String name;
@@ -27,8 +25,6 @@ public abstract class Commands {
         this.nextCommands = nextCommands;
     }
 
-    // ABSTRACT METHOD -> METHOD THAT SUB-CLASSES HAVE TO IMPLEMENT.
-    // SAYING EVERY SUBCLASS SHOULD HAVE THIS METHOD
     abstract public void run();
 
     public String getNextCommands() {
