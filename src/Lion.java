@@ -1,8 +1,8 @@
 public class Lion extends Animal{
     private boolean isSleeping;
 
-    public Lion(String name, String id) {
-        super(name, "lion", id, "Rooooooaarrrrr");
+    public Lion(String name) {
+        super(name, "lion", "Rooooooaarrrrr");
         this.isSleeping = true;
     }
 
