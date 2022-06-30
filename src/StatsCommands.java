@@ -14,24 +14,24 @@ public class StatsCommands extends Commands {
         printCommands();
         int userInput = getIntegerInput();
 
-        // USE STREAMS -> STREAMS ONLY -> https://stackify.com/streams-guide-java-8/
+
         if (userInput == 1) {
 
             Zoo.getZoo()
-                    .stream() // TURN INTO A STREAM
-                    .map(Animal::getName) // GET ANIMAL NAMES
-                    .forEach(this::printMessage); // PRINT EACH NAME OUT
+                    .stream()
+                    .map(Animal::getName)
+                    .forEach(this::printMessage);
 
         } else if (userInput == 2) {
 
             List<String> tameAnimals = Zoo.getZoo()
-                    .stream() // TURN INTO A STREAM
-                    .filter(Animal::getIsTame) // FILTER ON WHETHER ANIMAL IS TAME OR NOT
-                    .map(Animal::toString) // GET ANIMAL NAMES
-                    .collect(Collectors.toList()); // GET THE RESULT
+                    .stream()
+                    .filter(Animal::getIsTame)
+                    .map(Animal::toString)
+                    .collect(Collectors.toList());
 
-            printMessage(tameAnimals.size() + " tame animal(s)"); // GET THE SIZE OF THE RESULT
-            tameAnimals.forEach(this::printMessage); // PRINT THE RESULTS
+            printMessage(tameAnimals.size() + " tame animal(s)");
+            tameAnimals.forEach(this::printMessage);
 
         } else if (userInput == 3) {
 

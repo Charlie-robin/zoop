@@ -14,7 +14,6 @@
  * - GETTING THE ANIMALS INFORMATION
  */
 
-// MULTIPLE INTERFACES
 public class Animal implements Comparable<Animal>, Searchable {
 
     private String sound;

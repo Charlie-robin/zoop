@@ -65,8 +65,6 @@ public class User implements Searchable{
 
     @Override
     public boolean hasMatch(String searchTerm) {
-        // CHECK IF THE NAME FIELD CONTAINS THE SEARCH TERM PASSED IN
-        // .contains() -> TRUE / FALSE
         return name.contains(searchTerm);
     }
 

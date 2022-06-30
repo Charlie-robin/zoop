@@ -3,11 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="f06e70d8-edeb-4bfd-a9f1-a67aa80fcf27" name="Changes" comment="# ----------------------------------------------------------&#10;# Header - (type): Brief description&#10;# ----------------------------------------------------------&#10;#   * feat         A new feature&#10;#   * setup        Style/format changes (whitespace, etc.)&#10;#   * style        Style/format changes (whitespace, etc.)&#10;#   * fix          A bug fix&#10;#   * docs         Changes to documentation only&#10;#   * style        Style/format changes (whitespace, etc.)&#10;#   * refactor     Changes not related to a bug or feature&#10;#   * perf         Changes that affects performance&#10;#   * test         Changes that add/modify/correct tests&#10;#   * build        Changes to build system (configs, etc.)&#10;#   * ci           Changes to CI pipeline/workflow&#10;# ----------------------------------------------------------&#10;&#10;# ----------------------------------------------------------&#10;# Body - More detailed description, if necessary&#10;# ----------------------------------------------------------&#10;#   * Motivation behind changes, more detail into how &#10;# functionality might be affected, etc.&#10;# ----------------------------------------------------------&#10;&#10;# ----------------------------------------------------------&#10;# Footer - Associated issues, PRs, etc.&#10;# ----------------------------------------------------------&#10;#   * Ex: Resolves Issue #207, see PR #15, etc.&#10;# ----------------------------------------------------------">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Animal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Commands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ManageCommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ManageCommands.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Searchable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Searchable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/StatsCommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StatsCommands.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Zoo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Zoo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,12 +37,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
