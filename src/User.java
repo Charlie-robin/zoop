@@ -13,7 +13,7 @@
  *
  */
 
-public class User {
+public class User implements Searchable{
     private final String name;
     private int treatCount;
     private int score;
@@ -61,6 +61,13 @@ public class User {
     @Override
     public String toString(){
         return String.format("\nName : %s \nScore : %d \nTreat Count : %d\n",name,score, treatCount );
+    }
+
+    @Override
+    public boolean hasMatch(String searchTerm) {
+        // CHECK IF THE NAME FIELD CONTAINS THE SEARCH TERM PASSED IN
+        // .contains() -> TRUE / FALSE
+        return name.contains(searchTerm);
     }
 
     public void incrementScore(){

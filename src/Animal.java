@@ -14,8 +14,8 @@
  * - GETTING THE ANIMALS INFORMATION
  */
 
-
-public class Animal implements Comparable<Animal> {
+// MULTIPLE INTERFACES
+public class Animal implements Comparable<Animal>, Searchable {
 
     private String sound;
     private String name;
@@ -92,6 +92,10 @@ public class Animal implements Comparable<Animal> {
         return String.format("\nName :  %s\nType :  %s\nID :  %s\nHappiness :  %d\nisTame :  %s",name, type, id, happiness, isTame );
     }
 
+    @Override
+    public boolean hasMatch(String searchTerm) {
+        return name.contains(searchTerm) || type.contains(searchTerm) || id.contains(searchTerm) || sound.contains(searchTerm);
+    }
 
 
     @Override

@@ -1,10 +1,13 @@
+import java.util.ArrayList;
+import java.util.List;
 
 public class ManageCommands extends Commands{
 
+    private final User user;
 
-    public ManageCommands() {
+    public ManageCommands(User user) {
         super("Manage", new String[]{"All Animal Info", "View Animals by happiness", "Search", "Back"}, "manage");
-
+        this.user = user;
     }
 
     @Override
@@ -33,7 +36,25 @@ public class ManageCommands extends Commands{
 
 
         } else if (userInput == 3){
-            printMessage("Search");
+            printMessage("Enter Search term:");
+            String searchTerm = getStringInput();
+
+            // WE NEED AWAY OF SEARCHING AN ANIMAL & USER
+            // THESE ARE DIFFERENT CLASSES -> INTERFACE TO THE RESCUE
+            // USING THE INTERFACE AS THE TYPE -> MAKE A LIST OF SEARCHABLE ITEMS
+            // GET THE ANIMAL ARRAYLIST AND ADD ALL ANIMALS TO SEARCH
+            List<Searchable> toSearch = new ArrayList<>(Zoo.getZoo());
+            toSearch.add(user);
+
+            for (Searchable searchItem: toSearch) {
+                // WE USE THE METHOD ON THE INTERFACE -> hasMatch -> BOOLEAN
+                if(searchItem.hasMatch(searchTerm)){
+                    // WE USE THE METHOD ON THE INTERFACE -> toString -> STRING
+                    printMessage(searchItem.toString());
+                }
+            }
+
+
         } else {
             setNextCommands("home");
         }
