@@ -39,6 +39,11 @@ public class Main {
                    currentCommands.run();
                    break;
 
+               case "stats" :
+                   currentCommands = new StatsCommands();
+                   currentCommands.run();
+                   break;
+
                default:
                    isActive = false;
            }

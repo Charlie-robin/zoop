@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ManageCommands extends Commands{
 
@@ -20,20 +21,20 @@ public class ManageCommands extends Commands{
 
         if (userInput == 1) {
             printMessage("All Animal Info");
+            // PASS IN LAMBDA EXPRESSION
+            // PARAMETER -> DO SOMETHING
+            // (PARAMETER1, PARAMETER) -> DO SOMETHING
+            // PARAMETER -> { RETURN SOMETHING }
 
-            for (Animal animal : Zoo.getZoo()) {
-                printMessage(animal.toString());
-            }
+            // PASSING IN LAMBDA EXPRESSION -> ACTION -> WHAT WE WANT TO HAPPEN
+            Zoo.getZoo().forEach(animal -> printMessage(animal.toString()));
+
+            // METHOD REFERENCE -> WE WILL COME BACK TO THAT
 
         } else if (userInput == 2) {
             printMessage("View Animals by happiness");
 
-            Zoo.sortAnimals();
-
-            for (Animal animal : Zoo.getZoo()) {
-                printMessage(animal.toString());
-            }
-
+            Zoo.sortAnimals().forEach(animal -> printMessage(animal.toString()));
 
         } else if (userInput == 3){
             printMessage("Enter Search term:");
@@ -46,21 +47,29 @@ public class ManageCommands extends Commands{
             List<Searchable> toSearch = new ArrayList<>(Zoo.getZoo());
             toSearch.add(user);
 
-            for (Searchable searchItem: toSearch) {
-                // WE USE THE METHOD ON THE INTERFACE -> hasMatch -> BOOLEAN
-                if(searchItem.hasMatch(searchTerm)){
-                    // WE USE THE METHOD ON THE INTERFACE -> toString -> STRING
-                    printMessage(searchItem.toString());
-                }
-            }
+//            for (Searchable searchItem: toSearch) {
+//                // WE USE THE METHOD ON THE INTERFACE -> hasMatch -> BOOLEAN
+//                if(searchItem.hasMatch(searchTerm)){
+//                    // WE USE THE METHOD ON THE INTERFACE -> toString -> STRING
+//                    printMessage(searchItem.toString());
+//                }
+//            }
 
+            List<String> searchResults = toSearch
+                    .stream()
+                    .filter(searchItem -> searchItem.hasMatch(searchTerm)) // FILTER BASED ON TRUE / FALSE
+                    .map(Searchable::toString) // TAKE CLASS TURN INTO STRING
+                    .collect(Collectors.toList());
 
+            // METHOD REFERENCE VS LAMBDA EXPRESSION
+            // .map(Searchable::toString) = .map(searchItem -> searchItem.toString())
+            // searchResults.forEach(this::printMessage) = searchResults.forEach(result -> printMessage(result));
+
+            printMessage(searchResults.size() + " result(s) found.");
+
+            searchResults.forEach(this::printMessage);
         } else {
             setNextCommands("home");
         }
-
-
-
-
     }
 }
