@@ -50,7 +50,7 @@ public class Zoo{
         // ZOO -> STREAM -> SORT IT -> COLLECT IT -> RETURN IT
         // DATA -> STREAM -> INTERMEDIATE ACTIONS -> TERMINAL ACTION ON IT
         // NOT MODIFYING THE ZOO NOW
-        List<Animal> sortedZoo = zoo.stream()
+        List<Animal> sortedZoo = zoo.stream() // TURNS THE DATA INTO A STREAM
                 .sorted() // INTERMEDIATE ACTION -> DOING SOMETHING
                 .collect(Collectors.toList()); // TERMINAL ACTION -> CLOSING STREAM GETTING A RESULT
 

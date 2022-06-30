@@ -44,6 +44,10 @@ public abstract class Commands {
     }
 
     public void printCommands(){
+        printCommands(commands);
+    }
+
+    public void printCommands(String[] commands){
         for (int i = 0; i < commands.length; i++) {
             printMessage((i + 1) + " : " + commands[i]);
         }

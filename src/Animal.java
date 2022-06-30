@@ -46,6 +46,13 @@ public class Animal implements Comparable<Animal>, Searchable {
         setAnimalCount(animalCount + 1);
     }
 
+    public String getType() {
+        return type;
+    }
+
+    public String getName() {
+        return name;
+    }
 
     public Animal(String name, String type, String sound){
         this(name, type, type + "-" + animalCount, sound );

@@ -56,7 +56,7 @@ public class ManageCommands extends Commands{
 //            }
 
             List<String> searchResults = toSearch
-                    .stream()
+                    .stream() // TURN INTO A STREAM -> ALLOWS US TO PREFORM ACTIONS
                     .filter(searchItem -> searchItem.hasMatch(searchTerm)) // FILTER BASED ON TRUE / FALSE
                     .map(Searchable::toString) // TAKE CLASS TURN INTO STRING
                     .collect(Collectors.toList());
@@ -66,7 +66,6 @@ public class ManageCommands extends Commands{
             // searchResults.forEach(this::printMessage) = searchResults.forEach(result -> printMessage(result));
 
             printMessage(searchResults.size() + " result(s) found.");
-
             searchResults.forEach(this::printMessage);
         } else {
             setNextCommands("home");
