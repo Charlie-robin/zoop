@@ -1,3 +1,5 @@
+package com.zoop.commands;
+
 import java.util.Scanner;
 
 /**
@@ -18,8 +20,8 @@ public abstract class Commands {
     private final Scanner scanner = new Scanner(System.in);
     private final String name;
     private final String[] commands;
-    private String nextCommands;
-    public Commands(String name, String[] commands, String nextCommands) {
+    private CommandTypes nextCommands;
+    public Commands(String name, String[] commands, CommandTypes nextCommands) {
         this.name = name;
         this.commands = commands;
         this.nextCommands = nextCommands;
@@ -27,11 +29,11 @@ public abstract class Commands {
 
     abstract public void run();
 
-    public String getNextCommands() {
+    public CommandTypes getNextCommands() {
         return nextCommands;
     }
 
-    public void setNextCommands(String nextCommands) {
+    public void setNextCommands(CommandTypes nextCommands) {
         this.nextCommands = nextCommands;
     }
 

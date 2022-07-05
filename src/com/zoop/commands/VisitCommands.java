@@ -1,8 +1,14 @@
+package com.zoop.commands;
+
+import com.zoop.animals.Animal;
+import com.zoop.user.User;
+import com.zoop.zoo.Zoo;
+
 public class VisitCommands extends Commands {
     public User user;
 
     public VisitCommands(User user) {
-        super("Visit", new String[]{"Pet Animal", "Give treat", "Go Back"}, "visit");
+        super("Visit", new String[]{"Pet Animal", "Give treat", "Go Back"}, CommandTypes.VISIT);
         this.user = user;
     }
 
@@ -20,7 +26,7 @@ public class VisitCommands extends Commands {
             currentAnimal.pet();
             user.incrementScore();
         } else {
-            setNextCommands("home");
+            setNextCommands(CommandTypes.HOME);
         }
     }
 }

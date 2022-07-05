@@ -1,10 +1,13 @@
+package com.zoop.commands;
+
+import com.zoop.user.User;
 
 public class UserCommands extends Commands {
 
     private User user;
 
     public UserCommands() {
-        super("Create user", new String[]{}, "user");
+        super("Create user", new String[]{}, CommandTypes.USER);
     }
 
     public User getUser() {
@@ -19,7 +22,7 @@ public class UserCommands extends Commands {
         user = new User(name);
         printMessage(user.toString());
 
-       setNextCommands("home");
+       setNextCommands(CommandTypes.HOME);
 
     }
 }

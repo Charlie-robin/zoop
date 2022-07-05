@@ -1,6 +1,8 @@
+package com.zoop.commands;
+
 public class HomeCommands extends Commands {
     public HomeCommands() {
-        super("Home", new String[]{"Visit Animal", "Manage Animals","Animal Stats", "Quit" }, "home");
+        super("Home", new String[]{"Visit Animal", "Manage Animals","Animal Stats", "Quit" }, CommandTypes.HOME);
     }
 
     @Override
@@ -11,13 +13,13 @@ public class HomeCommands extends Commands {
         int userInput = getIntegerInput();
 
         if (userInput == 1) {
-            setNextCommands("visit");
+            setNextCommands(CommandTypes.VISIT);
         } else if (userInput == 2) {
-            setNextCommands("manage");
+            setNextCommands(CommandTypes.MANAGE);
         } else if (userInput == 3) {
-            setNextCommands("stats");
+            setNextCommands(CommandTypes.STATS);
         }else {
-            setNextCommands("");
+            setNextCommands(CommandTypes.EXIT);
         }
     }
 }

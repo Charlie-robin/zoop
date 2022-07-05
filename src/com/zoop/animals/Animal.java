@@ -1,3 +1,7 @@
+package com.zoop.animals;
+
+import com.zoop.utils.Searchable;
+
 /**
  * FOCUSING ON CLASS SYNTAX
  *
@@ -16,10 +20,10 @@
 
 public class Animal implements Comparable<Animal>, Searchable {
 
-    private String sound;
-    private String name;
-    private String type;
-    private String id;
+    private final String sound;
+    private final String name;
+    private final AnimalTypes type;
+    private final String id;
 
     private boolean isTame;
 
@@ -35,7 +39,7 @@ public class Animal implements Comparable<Animal>, Searchable {
         Animal.animalCount = animalCount;
     }
 
-    public Animal(String name, String type, String id, String sound){
+    public Animal(String name, AnimalTypes type, String id, String sound){
         this.name = name;
         this.type = type;
         this.id = id;
@@ -45,7 +49,7 @@ public class Animal implements Comparable<Animal>, Searchable {
         setAnimalCount(animalCount + 1);
     }
 
-    public String getType() {
+    public AnimalTypes getType() {
         return type;
     }
 
@@ -53,7 +57,7 @@ public class Animal implements Comparable<Animal>, Searchable {
         return name;
     }
 
-    public Animal(String name, String type, String sound){
+    public Animal(String name, AnimalTypes type, String sound){
         this(name, type, type + "-" + animalCount, sound );
     }
 
@@ -100,7 +104,7 @@ public class Animal implements Comparable<Animal>, Searchable {
 
     @Override
     public boolean hasMatch(String searchTerm) {
-        return name.contains(searchTerm) || type.contains(searchTerm) || id.contains(searchTerm) || sound.contains(searchTerm);
+        return name.contains(searchTerm) || type.toString().toLowerCase().contains(searchTerm) || id.contains(searchTerm) || sound.contains(searchTerm);
     }
 
 

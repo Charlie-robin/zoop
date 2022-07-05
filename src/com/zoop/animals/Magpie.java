@@ -1,3 +1,5 @@
+package com.zoop.animals;
+
 /**
  * FOCUSING ON INHERITANCE
  *
@@ -10,12 +12,12 @@ public class Magpie extends Animal {
     private boolean isFlying;
 
     public Magpie(String name) {
-        super(name, "magpie","Caaaarrrrrwwwww");
+        super(name, AnimalTypes.MAGPIE,"Caaaarrrrrwwwww");
         this.isFlying = false;
     }
 
     public Magpie(String name, String id) {
-        super(name, "magpie",id,"Caaaarrrrrwwwww");
+        super(name, AnimalTypes.MAGPIE ,id,"Caaaarrrrrwwwww");
         this.isFlying = false;
     }
 

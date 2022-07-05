@@ -1,6 +1,10 @@
+package com.zoop.zoo;
+
+import com.zoop.animals.Animal;
+import com.zoop.animals.Lion;
+import com.zoop.animals.Magpie;
+
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 

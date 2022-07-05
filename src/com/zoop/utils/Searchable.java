@@ -1,3 +1,5 @@
+package com.zoop.utils;
+
 public interface Searchable {
     String toString();
 

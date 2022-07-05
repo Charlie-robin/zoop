@@ -1,3 +1,7 @@
+package com.zoop.user;
+
+import com.zoop.utils.Searchable;
+
 /**
  * CLASS SYNTAX CHALLENGE
  * CREATE A USER CLASS FIELDS, GETTERS AND SETTERS
@@ -13,7 +17,7 @@
  *
  */
 
-public class User implements Searchable{
+public class User implements Searchable {
     private final String name;
     private int treatCount;
     private int score;

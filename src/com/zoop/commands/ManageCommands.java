@@ -1,13 +1,19 @@
+package com.zoop.commands;
+
+import com.zoop.utils.Searchable;
+import com.zoop.user.User;
+import com.zoop.zoo.Zoo;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class ManageCommands extends Commands{
+public class ManageCommands extends Commands {
 
     private final User user;
 
     public ManageCommands(User user) {
-        super("Manage", new String[]{"All Animal Info", "View Animals by happiness", "Search", "Back"}, "manage");
+        super("Manage", new String[]{"All Animal Info", "View Animals by happiness", "Search", "Back"}, CommandTypes.MANAGE);
         this.user = user;
     }
 
@@ -20,7 +26,7 @@ public class ManageCommands extends Commands{
         int userInput = getIntegerInput();
 
         if (userInput == 1) {
-            printMessage("All Animal Info");
+            printMessage("All com.zoop.animals.Animal Info");
 
             Zoo.getZoo().forEach(animal -> printMessage(animal.toString()));
 
@@ -47,7 +53,7 @@ public class ManageCommands extends Commands{
             printMessage(searchResults.size() + " result(s) found.");
             searchResults.forEach(this::printMessage);
         } else {
-            setNextCommands("home");
+            setNextCommands(CommandTypes.HOME);
         }
     }
 }

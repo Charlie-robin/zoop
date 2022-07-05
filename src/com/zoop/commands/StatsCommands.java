@@ -1,11 +1,16 @@
+package com.zoop.commands;
+
+import com.zoop.animals.Animal;
+import com.zoop.animals.AnimalTypes;
+import com.zoop.zoo.Zoo;
+
 import java.util.List;
 import java.util.Locale;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class StatsCommands extends Commands {
     public StatsCommands() {
-        super("Stats", new String[]{"Print Animal Name's","Print Tame animals", "Print Least happy", "By type", "Back" }, "stats");
+        super("Stats", new String[]{"Print Animal Name's","Print Tame animals", "Print Least happy", "By type", "Back" }, CommandTypes.STATS);
     }
 
     @Override
@@ -36,7 +41,7 @@ public class StatsCommands extends Commands {
         } else if (userInput == 3) {
 
             // MIN
-            // Optional<Animal> leastHappyAnimal = Zoo.getZoo()
+            // Optional<com.zoop.animals.Animal> leastHappyAnimal = com.zoop.zoo.Zoo.getZoo()
             //       .stream()
             //        .min((a, b) -> a.getHappiness() - b.getHappiness());
             // leastHappyAnimal.ifPresent(animal -> printMessage(animal.toString()));
@@ -49,11 +54,11 @@ public class StatsCommands extends Commands {
             printMessage(leastHappyAnimal.toString());
 
         } else if(userInput == 4){
-            String[] animalTypes = {"Lion", "Magpie"};
-            printCommands(animalTypes);
+            AnimalTypes[] animalTypes = {AnimalTypes.LION, AnimalTypes.MAGPIE};
+            printCommands( new String[]{AnimalTypes.LION.toString(), AnimalTypes.MAGPIE.toString()});
 
             int userSelection = getIntegerInput(animalTypes.length);
-            String selectedAnimal = animalTypes[userSelection - 1].toLowerCase(Locale.ROOT);
+            AnimalTypes selectedAnimal = animalTypes[userSelection - 1];
 
             List<String> animalByType = Zoo.getZoo()
                     .stream()
@@ -65,7 +70,7 @@ public class StatsCommands extends Commands {
 
             animalByType.forEach(this::printMessage);
         } else {
-            setNextCommands("home");
+            setNextCommands(CommandTypes.HOME);
         }
 
     }
