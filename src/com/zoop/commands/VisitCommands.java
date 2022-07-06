@@ -26,7 +26,7 @@ public class VisitCommands extends Commands {
             currentAnimal.pet();
             user.incrementScore();
         } else {
-            setNextCommands(CommandTypes.HOME);
+            setNextCommands(CommandTypes.START);
         }
     }
 }

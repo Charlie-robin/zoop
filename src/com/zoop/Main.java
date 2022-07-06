@@ -25,7 +25,7 @@ public class Main {
 
        while(isActive){
            switch(currentCommands.getNextCommands()){
-               case HOME :
+               case START:
                    currentCommands = new HomeCommands();
                    break;
 

@@ -2,7 +2,7 @@ package com.zoop.commands;
 
 public class HomeCommands extends Commands {
     public HomeCommands() {
-        super("Home", new String[]{"Visit Animal", "Manage Animals","Animal Stats", "Quit" }, CommandTypes.HOME);
+        super("Home", new String[]{"Visit Animal", "Manage Animals","Animal Stats", "Quit" }, CommandTypes.START);
     }
 
     @Override

@@ -53,7 +53,7 @@ public class ManageCommands extends Commands {
             printMessage(searchResults.size() + " result(s) found.");
             searchResults.forEach(this::printMessage);
         } else {
-            setNextCommands(CommandTypes.HOME);
+            setNextCommands(CommandTypes.START);
         }
     }
 }

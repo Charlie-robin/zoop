@@ -5,7 +5,6 @@ import com.zoop.animals.AnimalTypes;
 import com.zoop.zoo.Zoo;
 
 import java.util.List;
-import java.util.Locale;
 import java.util.stream.Collectors;
 
 public class StatsCommands extends Commands {
@@ -70,7 +69,7 @@ public class StatsCommands extends Commands {
 
             animalByType.forEach(this::printMessage);
         } else {
-            setNextCommands(CommandTypes.HOME);
+            setNextCommands(CommandTypes.START);
         }
 
     }

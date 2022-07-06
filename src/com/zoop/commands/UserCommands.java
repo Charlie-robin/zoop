@@ -22,7 +22,7 @@ public class UserCommands extends Commands {
         user = new User(name);
         printMessage(user.toString());
 
-       setNextCommands(CommandTypes.HOME);
+       setNextCommands(CommandTypes.START);
 
     }
 }

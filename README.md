@@ -17,6 +17,7 @@ Each lesson with its notes are on their own individual branch.
 - `04-protected-static-polymorphism`
 - `05-abstract-classes-interfaces`
 - `06-interfaces-lambda-streams`
+- `07-challenge-packages-enums`
 
 
 ---
