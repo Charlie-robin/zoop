@@ -125,14 +125,14 @@ class Zoo {
     - {static} getRandomName() : List<Animal>
 }
 
-Magpie <|-- Animal
-Lion <|-- Animal
+Magpie --|> Animal
+Lion --|> Animal
 
-HomeCommands <|-- Commands
-StatsCommands <|-- Commands
-UserCommands <|-- Commands
-ManageCommands <|-- Commands
-VisitCommands <|-- Commands
+HomeCommands --|> Commands
+StatsCommands --|> Commands
+UserCommands --|> Commands
+ManageCommands --|> Commands
+VisitCommands --|> Commands
 
 Animal <|.. Comparable
 Animal <|.. Searchable

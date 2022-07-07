@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f06e70d8-edeb-4bfd-a9f1-a67aa80fcf27" name="Changes" comment="(feat): Enums">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zoop/animals/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zoop/animals/Animal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zoop/commands/ManageCommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zoop/commands/ManageCommands.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/class-diagram.pml" beforeDir="false" afterPath="$PROJECT_DIR$/class-diagram.pml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
