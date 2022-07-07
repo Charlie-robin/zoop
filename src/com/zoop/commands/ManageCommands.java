@@ -26,7 +26,7 @@ public class ManageCommands extends Commands {
         int userInput = getIntegerInput();
 
         if (userInput == 1) {
-            printMessage("All com.zoop.animals.Animal Info");
+            printMessage("All Animal Info");
 
             Zoo.getZoo().forEach(animal -> printMessage(animal.toString()));
 
